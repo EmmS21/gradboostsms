@@ -5,7 +5,7 @@ import time
 import random
 import urllib.request
 app = Flask(__name__)
-@app.route("/sms")
+@app.route("/sms", methods=['POST'])
 def hello():
     account_sid = 'AC963cc6862f5f7a66d4feb7ecf1299c83'
     auth_token = 'b67bcb674aa16f237cee3df199cdbd14'
