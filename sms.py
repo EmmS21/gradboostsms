@@ -21,10 +21,11 @@ def hello():
     while datetime.now() <= end_time:
         for num, name in name_num.items():
             chall = random.choice(full_text)
+            challenge = ''.join(map(str, chall))
             client.messages.create(from_="+12058988731",
                                    to="{}".format(num),
-                                   body="Hi {}. This is an automated message from The Gradient Boost.  Please complete the challenge, upload to your GitHub repository, name it TheGradientBoostWhatsAppcodingchallengesMay2020 and send us the link on Slack.  Here is your weekly programming challenge:  {}".format(name, ''.join(map(str, chall)))
+                                   body="Hi {}. This is an automated message from The Gradient Boost.  Please complete the challenge, upload to your GitHub repository, name it TheGradientBoostWhatsAppcodingchallengesMay2020 and send us the link on Slack.  Here is your weekly programming challenge:  {}".format(name, challenge)
                                    )
-        time.sleep(180.0 - time.time() % 180.0)  # rerun function every 7 days 604800
+        time.sleep(30.0 - time.time() % 30.0)  # rerun function every 7 days 604800
 if __name__ == "__main__":
     app.run(debug=True)
