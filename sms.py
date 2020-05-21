@@ -12,8 +12,8 @@ def hello():
     client = Client(account_sid,auth_token)
     #time to send messages
     end_time = datetime.strptime("10-06-2020", "%d-%m-%Y")
-    list_numbs = ['+15162341744', '+27615304405', '+2347033228906', '+2348129190338', '+2347065094065', '+2348029033427'] #numbers to send sms to
-    names = ['Jasmine', 'Vusi', 'Ritmwa', 'Ajibola', 'Benjamin', 'Gershinen'] #name of receipient
+    list_numbs = ['+15162341744', '+27615304405'] #, '+2347033228906', '+2348129190338', '+2347065094065', '+2348029033427' #numbers to send sms to
+    names = ['Jasmine', 'Vusi'] #, 'Ritmwa', 'Ajibola', 'Benjamin', 'Gershinen' #name of receipient
     name_num = dict(zip(list_numbs, names))
     file_path = "https://raw.githubusercontent.com/EmmS21/GradientBoostIntrotoDS/master/Challenges/data-programming.txt"
     file = urllib.request.urlopen(file_path)
@@ -25,7 +25,6 @@ def hello():
                                    to="{}".format(num),
                                    body="Hi {}. This is an automated message from The Gradient Boost.  Please complete the challenge, upload to your GitHub repository, name it TheGradientBoostWhatsAppcodingchallengesMay2020 and send us the link on Slack.  Here is your weekly programming challenge:  {}".format(name, ''.join(map(str, chall)))
                                    )
-        time.sleep(604800.0 - time.time() % 604800.0)  # rerun function every 7 days
-
+        time.sleep(180.0 - time.time() % 180.0)  # rerun function every 7 days 604800
 if __name__ == "__main__":
     app.run(debug=True)
